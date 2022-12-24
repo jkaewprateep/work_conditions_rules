@@ -52,6 +52,19 @@ def update_DATA( action ):
 	return DATA, LABEL, step
 ```
 
+## Running output ##
+
+```
+step: 000044 action: 000000 player_y_value: 000014 ball_y_value: 000046
+step: 000045 action: 000000 player_y_value: 000014 ball_y_value: 000045
+step: 000046 action: 000000 player_y_value: 000014 ball_y_value: 000044
+step: 000047 action: 000000 player_y_value: 000014 ball_y_value: 000043
+step: 000048 action: 000000 player_y_value: 000014 ball_y_value: 000041
+step: 000049 action: 000000 player_y_value: 000014 ball_y_value: 000040
+step: 000050 action: 000000 player_y_value: 000014 ball_y_value: 000039
+step: 000051 action: 000000 player_y_value: 000014 ball_y_value: 000038
+```
+
 ## Result ##
 
 #### Training AI networks model ####
