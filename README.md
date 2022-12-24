@@ -65,6 +65,38 @@ step: 000050 action: 000000 player_y_value: 000014 ball_y_value: 000039
 step: 000051 action: 000000 player_y_value: 000014 ball_y_value: 000038
 ```
 
+## Random Function ##
+
+```
+def random_action( ): 
+
+	player_y_value = read_current_sate('player_y')
+	player_velocity_value = read_current_sate('player_velocity')
+	cpu_y_value = read_current_sate('cpu_y')
+	ball_x_value = read_current_sate('ball_x')
+	ball_y_value = read_current_sate('ball_y')
+	ball_velocity_x_value = read_current_sate('ball_velocity_x')
+	ball_velocity_y_value = read_current_sate('ball_velocity_y')
+	
+	# 1 left
+	# 2 hold
+	# 3 right
+	
+	player_y_value - ball_y_value
+	ball_y_value - player_y_value
+	
+	coeff_01 = player_y_value - ball_y_value
+	coeff_02 = 5
+	coeff_03 = ball_y_value - player_y_value
+	
+	temp = tf.constant( [ coeff_01, coeff_02, coeff_03 ], shape=( 1, 3 ) )
+	temp = tf.cast( temp, dtype=tf.int32 )
+	
+	action = tf.math.argmax( temp[0] ).numpy()
+
+	return action
+```
+
 ## Result ##
 
 #### Training AI networks model ####
