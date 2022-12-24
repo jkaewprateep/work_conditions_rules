@@ -1,6 +1,56 @@
 # work_conditions_rules
 Transforms works conditions and rules to AI model training.
 
+## Sample game conditions and rules ##
+
+```
+def update_DATA( action ):
+	global reward
+	global step
+	global gamescores
+	global DATA
+	global LABEL
+	
+	player_y_value = read_current_sate('player_y')
+	player_velocity_value = read_current_sate('player_velocity')
+	cpu_y_value = read_current_sate('cpu_y')
+	ball_x_value = read_current_sate('ball_x')
+	ball_y_value = read_current_sate('ball_y')
+	ball_velocity_x_value = read_current_sate('ball_velocity_x')
+	ball_velocity_y_value = read_current_sate('ball_velocity_y')
+	
+	step = step + 1
+	
+	print( "step: " + str( int(step) ).zfill(6) + " action: " + str( int(action) ).zfill(6) + 
+          " player_y_value: " + str( int(player_y_value) ).zfill(6) + " ball_y_value: " + str( int(ball_y_value) ).zfill(6) )
+	
+	contrl = reward
+	coff_0 = player_y_value
+	coff_1 = ball_y_value
+	coff_2 = player_y_value - ball_x_value
+	coff_3 = 1
+	coff_4 = 1
+	coff_5 = 1
+	coff_6 = 1
+	coff_7 = 1
+	coff_8 = 1
+	
+	coeff_row = tf.constant( [ contrl, coff_0, coff_1, coff_2, coff_3, coff_4, coff_5, coff_6, coff_7, coff_8, 
+		1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ], shape=( 30, 1 ), dtype=tf.float32 )
+	
+	DATA_row = tf.reshape( coeff_row, shape=(1, 1, 1, 1, 30) )
+	
+	DATA = tf.experimental.numpy.vstack([DATA, DATA_row])
+	DATA = DATA[-30:,:,:,:]
+	
+	LABEL = tf.experimental.numpy.vstack([LABEL, tf.constant(action, shape=(1, 1, 1, 1, 1))])
+	LABEL = LABEL[-30:,:,:,:]
+	
+	DATA = DATA[-30:,:,:,:]
+	LABEL = LABEL[-30:,:,:,:]
+	
+	return DATA, LABEL, step
+```
 
 ## Result ##
 
