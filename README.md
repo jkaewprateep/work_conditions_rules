@@ -1,9 +1,10 @@
 # work_conditions_rules
-Transforms works conditions and rules to AI model training, we study and know the limits of the AI networks learning and its optimizers now we select the proper works for them by simple rules conditions create from the tasks we are commiting to it.
+
+Transforms works conditions and rules to AI model training, we study and know the limits of the AI networks learning and its optimizers now we select the proper works for them by simple rules and conditions created from the tasks we are committing to it.
 
 ## Sample game conditions and rules ##
 
-The simple rules conditions for Pong game is samples for many tasks that required curser movements such as drop-catch or distrance approches. The control ```contrl``` rule is the condition telling to do or negative to do, robot will do it anyway if still cannot find matching rules better than the conditions. Player ```player_y_value ``` and Ball ```ball_y_value``` is required for the robot learning from game conditions, you may inputs something else with better results but the objectives is robot learning from the actual game conditions. Some rules we added for curser running that important for shorten AI learning process and will neglectwhen the robot found the pattern ```player_y_value - ball_x_value``` or waiting until the robot figured it out from conditions you input.
+The simple rule's conditions for Pong game is a sample for many tasks that required curser movements such as drop-catch or distance approaches. The control ```contrl``` rule is the condition telling to do or negative to do, a robot will do it anyway if still cannot find matching rules better than the conditions. Player ```player_y_value ``` and Ball ```ball_y_value``` is required for the robot to learn from game conditions, you may input something else with better results but the objective is for a robot to learn from the actual game conditions. Some rules we added for curser running are important for shortening AI learning process and will neglect when the robot found the pattern ```player_y_value - ball_x_value``` or waits until the robot figures it out from the conditions you input.
 
 ```
 def update_DATA( action ):
