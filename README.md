@@ -57,6 +57,8 @@ def update_DATA( action ):
 
 ## Running output ##
 
+Game's inputs using for the simple tasks to perform gameplay as displayed in the result section.
+
 ```
 step: 000044 action: 000000 player_y_value: 000014 ball_y_value: 000046
 step: 000045 action: 000000 player_y_value: 000014 ball_y_value: 000045
@@ -69,6 +71,8 @@ step: 000051 action: 000000 player_y_value: 000014 ball_y_value: 000038
 ```
 
 ## Random Function ##
+
+There are two conditions as simple rules for ```press K_w``` for run the curser up and ```K_s``` for run the curder down, we spared ```press K_h``` for do ```none```
 
 ```
 def random_action( ): 
@@ -112,6 +116,8 @@ def random_action( ):
 
 
 ## Result ##
+
+The result from conditions and rules transform to AI input rules.
 
 #### Training AI networks model ####
 
