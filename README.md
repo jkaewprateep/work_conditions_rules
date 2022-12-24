@@ -97,6 +97,17 @@ def random_action( ):
 	return action
 ```
 
+## Files and Directory ##
+
+| File name | Description |
+| ------------- | ------------- |
+| sample.py | sample codes  |
+| Ping-Pong.gif | training time  |
+| Pong Game.gif | gameplay  |
+| Pixel Copter.gif  | Further application  |
+| README.md  | readme file |
+
+
 ## Result ##
 
 #### Training AI networks model ####
