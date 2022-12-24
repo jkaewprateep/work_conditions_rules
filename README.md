@@ -6,6 +6,15 @@ Transforms works conditions and rules to AI model training, we study and know th
 
 The simple rule's conditions for Pong game is a sample for many tasks that required curser movements such as drop-catch or distance approaches. The control ```contrl``` rule is the condition telling to do or negative to do, a robot will do it anyway if still cannot find matching rules better than the conditions. Player ```player_y_value ``` and Ball ```ball_y_value``` is required for the robot to learn from game conditions, you may input something else with better results but the objective is for a robot to learn from the actual game conditions. Some rules we added for curser running are important for shortening AI learning process and will neglect when the robot found the pattern ```player_y_value - ball_x_value``` or waits until the robot figures it out from the conditions you input.
 
+
+| rule name |    Condition   | Description |
+| ------------- | ------------- | ------------- |
+| press K_w | move up  | Player curser move up  |
+| press K_s | move down  | Player curser move down  |
+| press K_h | move none  | Player curser move none  |
+| Control  | Negative ack  | Bad or Good  |
+
+
 ```
 def update_DATA( action ):
 	global reward
